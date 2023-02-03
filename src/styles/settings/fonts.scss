@@ -1,0 +1,22 @@
+/* ==========================================================================
+   FONTS / SETTINGS
+   ========================================================================== */
+/// Font family
+:root {
+    --font-primary: 'Inter', Helvetica, Arial, sans-serif;
+
+    --font-size-content: 1rem;
+
+    --font-size-button: 1.25rem;
+
+    /// Grosseur des textes
+    --font-size-h1: 5.3125rem;
+    --font-size-h2: 4rem;
+    --font-size-p48: 3rem;
+    --font-size-p30: 1.875rem;
+    --font-size-p25: 1.5625rem;
+    --font-size-p20: 1.25rem;
+    --font-size-p18: 1.125rem;
+    --font-size-p14: 0.875rem;
+    --font-size-p12: 0.75rem;
+}

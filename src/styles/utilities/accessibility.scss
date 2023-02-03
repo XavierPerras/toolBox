@@ -1,0 +1,24 @@
+/* ==========================================================================
+    ACCESSIBILITY / UTILITIES
+   ========================================================================== */
+
+// Cette classe permet de mettre invisible un élément de la page,
+// Cet élément est toujours accessible dans le flow du document
+.u-hidden-visually {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    width: 1px !important;
+}
+
+/// Cette classe permet de mettre invisible un élément de la page.
+/// Cet élément est sorti du flux du document.
+.u-hidden {
+    display: none !important;
+}

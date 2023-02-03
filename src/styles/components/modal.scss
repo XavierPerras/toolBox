@@ -1,0 +1,109 @@
+/* ==========================================================================
+   modal / components
+   ========================================================================== */
+// to fix center modale  / fix button bug
+
+.modal {
+    --modal-padding: 60px;
+
+    @include cover(fixed);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(-100%);
+    transition: opacity 0.8s $ease-out-back 0.4s, transform 0s 0.8s;
+    z-index: 20;
+
+    .modal-is-active & {
+        opacity: 1;
+        transform: translateY(0);
+        transition: 0.8s $ease-out-expo, transform 0s;
+    }
+}
+.modal__scrim {
+    @include cover();
+    background-color: var(--color-black);
+    opacity: 1;
+    .bgG {
+        background-color: var(--color-green-primary);
+    }
+}
+
+.modal__box {
+    background-color: var(--color-white);
+    border-radius: 10px;
+    color: var(--color-black);
+    width: 80vw;
+    position: relative;
+    height: 80vh;
+    z-index: 1;
+    margin: 4% auto;
+    opacity: 0;
+    transform: translateX(100%); //arriver du modal
+    transition: transform 0.4s $ease-in-expo;
+
+    .modal-is-active & {
+        opacity: 1;
+        transform: translateX(0); //arrivé du modal
+        transition: all 0.4s $ease-out-expo 0.2s;
+    }
+}
+
+.modal__content {
+    height: 100%;
+    overflow-y: auto;
+    padding: var(--modal-padding);
+}
+
+.modal__close {
+    --bar-width: 2px;
+    --button-size: 40px;
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    height: var(--button-size);
+    outline: none;
+    padding: 0;
+    position: absolute;
+    right: calc(var(--modal-padding) / 2);
+    top: calc(var(--modal-padding) / 2);
+    width: var(--button-size);
+
+    &::before,
+    &::after {
+        background: var(--color-black);
+        bottom: 0;
+        content: '';
+        height: var(--bar-width);
+        left: 0;
+        right: 0;
+        top: 0;
+        margin: auto;
+        position: absolute;
+        transition: transform 0.3s $ease-out-expo;
+        width: 80%;
+    }
+
+    &::before {
+        transform: rotate(-45deg);
+    }
+    &::after {
+        transform: rotate(45deg);
+    }
+
+    &:hover {
+        opacity: 0.7;
+        &::before {
+            transform: rotate(0);
+        }
+        &::after {
+            transform: rotate(0);
+        }
+    }
+}
+.modal-is-active body {
+    overflow: hidden;
+}

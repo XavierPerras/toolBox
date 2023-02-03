@@ -1,0 +1,20 @@
+# Pipeline
+dist/
+
+
+# Node
+node_modules/
+npm-debug.log
+
+# JetBrains
+.idea
+
+# Mac
+.DS_Store
+.DS_Store?
+._*
+
+# Windows
+[Dd]esktop.ini
+Thumbs.db
+scripts/tmp

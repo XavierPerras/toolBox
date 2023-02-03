@@ -1,0 +1,43 @@
+/* ==========================================================================
+   icons / component
+   ========================================================================== */
+
+[class^='icon'] {
+    fill: currentColor; // inherit color of its context
+    display: inline-block;
+    flex: 0 0 auto; // prevent icon shrink/grow if in a flex parent
+    height: 1em;
+    vertical-align: middle;
+    width: 1em;
+    stroke: transparent;
+}
+
+.icon--stroke {
+    fill: transparent;
+    stroke: currentColor;
+}
+
+.icon--xs {
+    height: 0.75em;
+    width: 0.75em;
+}
+
+.icon--sm {
+    height: 0.8em;
+    width: 0.8em;
+}
+
+.icon--md {
+    height: 1.25em;
+    width: 1.25em;
+}
+
+.icon--lg {
+    height: 1.75em;
+    width: 1.75em;
+}
+
+.icon--xl {
+    height: 7em;
+    width: 7em;
+}

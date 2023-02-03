@@ -1,0 +1,11 @@
+{
+  "timtools - Ajout d'une icône svg": {
+    "prefix": "tim-icon",
+    "body": [
+      "<svg class=\"${2|icon,icon icon--xs,icon icon--sm,icon icon--md,icon icon--lg,icon icon--xl|}\">",
+      "    <use xlink:href=\"#icon-${1:iconName}\"></use>",
+      "</svg>"
+    ],
+    "description": "Ajouter une icône à partir du sprite svg"
+  }
+}

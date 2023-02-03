@@ -1,0 +1,54 @@
+//FONTS
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+// TOOLS
+// mixins et fonctions utilisés globalement dans le SCSS (Sass)
+@import 'tools/cover';
+
+// SETTINGS
+// Contient les variables sur les polices, les définitions de couleurs, les définitions de  grandeurs,   etc.
+@import 'settings/colors';
+@import 'settings/easing';
+@import 'settings/fonts';
+@import 'settings/dimensions';
+
+// GENERIC
+// Permet de réinitialiser les CSS et de changer le modèle de boîte en box-sizing: border-box
+@import 'generic/normalize';
+@import 'generic/reset';
+
+// ELEMENTS
+// Modification des styles généraux de la page. Ce sont les styles qui seront généralement hérités par les éléments de la page.
+@import 'elements/body';
+@import 'elements/headings';
+@import 'elements/links';
+@import 'elements/wrapper';
+
+// COMPONENTS
+// Composants d'interface utilisateur spécifiques.
+// C’est là que la majorité de notre travail a lieu.
+@import '../../node_modules/swiper/swiper';
+@import '../../node_modules/swiper/modules/pagination/pagination.scss';
+@import '../../node_modules/swiper/modules/navigation/navigation.scss';
+@import 'components/button';
+@import 'components/icons';
+@import 'components/footer';
+@import 'components/header';
+@import 'components/hero';
+@import 'components/texte';
+@import 'components/avecRecette';
+@import 'components/compte';
+@import 'components/campagne';
+@import 'components/demarrer';
+@import 'components/temoignages';
+@import 'components/produit';
+@import 'components/cards';
+@import 'components/objectif';
+@import 'components/maintenant';
+@import 'components/scrolly';
+@import 'components/modal';
+@import 'components/form';
+@import 'components/snackBar';
+
+// UTILITIES
+// Utilitaires et classes auxiliaires avec possibilité de remplacer tout ce qui précède, par exemple masquer les éléments de la page
+@import 'utilities/accessibility';

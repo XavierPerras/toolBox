@@ -1,0 +1,57 @@
+.has-js {
+    //relis le JS au css pour eviter l'opacité zero
+    //animation du scrolly
+    .cards {
+        perspective: 900px;
+    }
+
+    [data-scrolly='fromBottom'] {
+        opacity: 0; // si JS est desactiver l'opsacité reste a zero!!
+        transition: all 0.4s ease-out;
+        transform: translateY(60px);
+
+        &.is-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    [data-scrolly='fromLeft'] {
+        opacity: 0;
+        transition: all 0.6s ease-out;
+        transform: translateX(-80px);
+
+        &.is-active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    [data-scrolly='fromReverse'] {
+        opacity: 0;
+        transform: rotateX(-180deg);
+        transition: all 0.6s ease-out;
+        &.is-active {
+            opacity: 1;
+            transform: rotateX(0);
+        }
+    }
+    [data-scrolly='fromRight'] {
+        opacity: 0;
+        transition: all 0.6s ease-out;
+        transform: translateX(80px);
+
+        &.is-active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    [data-scrolly='flipFromBottom'] {
+        opacity: 0; // si JS est desactiver l'opsacité reste a zero!!
+        transition: all 1s ease-out;
+        transform: rotateX(120deg);
+
+        &.is-active {
+            opacity: 1;
+            transform: rotateX(0);
+        }
+    }
+}

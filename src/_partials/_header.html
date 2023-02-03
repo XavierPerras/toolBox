@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{{title}} | TP3</title>
+
+        <link rel="stylesheet" href="styles/main.css" />
+
+        <script src="scripts/main.js" defer></script>
+
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+        <link rel="manifest" href="assets/favicon/site.webmanifest">
+        <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+    </head>
+
+    <body>
+        
+        
+<section class="header" data-component="Header">
+    <div class="wrapper">
+    <nav>
+        <ul>
+           <div class="logo"><a href=""><img src="assets/images/logo.png" alt="Logo du site web"></a></div> 
+            <li><a href="index.html">Accueuil</a></li>
+            <li><a href="index.html">Soutennir une campagne</a></li>
+            <li><a href="campagne.html">Faire campagne</a></li>
+            <li><a href="">Produits</a></li>
+            <li><a href="">Contact</a></li>
+            <div class="connexion"><li><a href="#">Connexion</a></li>
+            <li><a href="" class="button">Faire Campagne</a></li>
+             
+        </div>
+            
+        </ul>
+    </nav>
+    <button class="header__toggle js-toggle"  data-component="Modal" data-modal="fromleft" data-modal-id="tpl-modal">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</div>
+</section>
+<template id="tpl-modal">
+    <div class="modal">
+        <div class="modal__scrim">
+            <div class="modal__box">
+                <div class="modal__content nav_reduit">
+                    <ul>  <li><a href="index.html">Accueuil</a></li>
+                    <li><a href="index.html">Soutennir</a></li>
+                    <li><a href="campagne.html">Faire campagne</a></li>
+                    <li><a href="">Produits</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="#">Connexion</a></li>
+                    </ul>
+                <button class="modal__close js-close"></button>
+            </div>
+        </div>
+    </div>
+</template>

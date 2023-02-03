@@ -1,0 +1,17 @@
+{
+  "TimDoc - Commentaire sur une classe": {
+    "prefix": "tim-doc-class",
+    "body": ["  /** ${1:method description} */"],
+    "description": "Ajouter un commentaire sur une méthode"
+  },
+  "TimDoc - Commentaire sur une méthode": {
+    "prefix": "tim-doc-method",
+    "body": [
+      "  /**",
+      "   * ${1:method description}",
+      "   * @param {${2:type}} ${3:name} - ${4:description}",
+      "   */"
+    ],
+    "description": "Ajouter un commentaire sur une méthode"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "basic comment": {
+    "prefix": "tim-doc-css-basic",
+    "body": ["/* $1 */"],
+    "description": "Commentaire de base SCSS"
+  },
+
+  "section comment": {
+    "prefix": "tim-doc-css-section",
+    "body": [
+      "/* ==========================================================================",
+      "   $1 / $2",
+      "   ========================================================================== */",
+      "",
+      ".$1 {}"
+    ],
+    "description": "Commentaire de section SCSS"
+  },
+
+  "sub-section comment": {
+    "prefix": "tim-doc-css-sub",
+    "body": [
+      "/*",
+      "   $1",
+      "   ========================================================================== */"
+    ],
+    "description": "Commentaire de sous-section SCSS"
+  }
+}
