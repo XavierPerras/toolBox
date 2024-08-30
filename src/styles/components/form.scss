@@ -1,11 +1,6 @@
 /* ==========================================================================
    form / component
    ========================================================================== */
-.form_section {
-    background-color: var(--color-green-primary);
-    padding: 40px 0;
-    color: white;
-}
 .form {
     --input-radius: 3px;
     --input-padding: 1em;
@@ -136,7 +131,6 @@
         overflow: hidden;
         padding-left: calc(var(--size) + var(--spacing-md));
         position: relative;
-
         &::before,
         &::after {
             content: '';
@@ -165,7 +159,6 @@
     }
 }
 .checkbox {
-    margin: 10px auto;
     .input__label::after {
         background: url('../assets/images/icon-check.svg') no-repeat 50% 50%;
         background-size: 50%;
@@ -186,9 +179,6 @@
 
 /** ERROR
     ===================================================== */
-.message {
-    display: none;
-}
 .error {
     .input__element,
     &.checkbox .input__label::before,
@@ -198,10 +188,6 @@
         box-shadow: inset 0 0 0 3px var(--color-fail);
     }
     .input__label {
-        color: var(--color-orange-primary);
-    }
-    .message {
-        display: block;
-        color: var(--color-orange-primary);
+        color: var(--color-fail);
     }
 }

@@ -1,0 +1,194 @@
+{% include '_partials/_header.html' %}
+
+<section>
+    <div class="wrapper">
+        <nav>
+            <div class="swiper" data-split="split" data-autoplay="autoplay" data-component="Carousel">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <a href="index.html" class="back">Retour</a>
+                    </li>
+                    <li class="swiper-slide"><a href="#intro">Introduction</a></li>
+                    <li class="swiper-slide"><a href="#dependance">Dépendance</a></li>
+                    <li class="swiper-slide"><a href="#utilisation">Utilisations</a></li>
+                    <li class="swiper-slide"><a href="#variantes">Variantes</a></li>
+                    <li class="swiper-slide"><a href="#parametres">Paramètres</a></li>
+                    <li class="swiper-slide"><a href="#autres">Autre utilisation</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div>
+            <section id="intro">
+                <h1>Carousel</h1>
+                <p>Cette composante permet d'instancier un carousel sur un élément html.</p>
+            </section>
+
+            <section id="dependance">
+                <h2>Dépendance</h2>
+                <h3>Swiper</h3>
+                <p>
+                    Afin d'utiliser cette composante, vous devrez vous assurer que la dépendance npm swiper soit
+                    installée dans votre projet.
+                </p>
+
+                <script type="text/plain" class="language-scss">
+                    # TERMINAL
+                    npm install swiper
+                </script>
+
+                <p>
+                    Si vous n'êtes pas dans la structure NPM ou TimTools, référez-vous à la
+                    <a href="https://swiperjs.com/swiper-api" target="_blank">documentation complète</a>
+                </p>
+            </section>
+
+            <section id="utilisation">
+                <h2>Comment l'utiliser</h2>
+
+                <p>
+                    Afin d'utiliser la composante, mettre l'attribut
+                    <strong>data-component="Carousel"</strong>
+                    sur une structure html respectant celle de la librairie Swiper.
+                </p>
+                <script type="text/plain" class="language-markup">
+                    # HTML
+                    <div class="swiper" data-component="Carousel">...</div>
+                </script>
+
+                <!-- HTML exemple complet -->
+                <details>
+                    <summary>exemple de code complet</summary>
+
+                    <script type="text/plain" class="language-markup">
+                        # HTML
+                        <!-- Slider main container -->
+                        <div class="swiper" data-component="Carousel">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <div class="swiper-slide">Slide 1</div>
+                                <div class="swiper-slide">Slide 2</div>
+                            </div>
+                            <!-- If we need pagination -->
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </script>
+                </details>
+
+                <p>
+                    Pour que les styles soient bien appliqués, il faut importer les styles de bases de Swiper ainsi que
+                    les modules supportés (navigation et pagination).
+                </p>
+
+                <script type="text/plain" class="language-scss">
+                    # SCSS
+                    @import '../../node_modules/swiper/swiper.scss';
+                    @import '../../node_modules/swiper/modules/pagination/pagination';
+                    @import '../../node_modules/swiper/modules/navigation/navigation';
+                </script>
+
+                <p>Dans la structure TimTools, la ComponentFactory s'occupe de l'instantiation des composantes.</p>
+                <script type="text/plain" class="language-scss">
+                    # JS
+                    new ComponentFactory()
+                </script>
+
+                <a href="componentfactory.html" target="_blank">Voir la componentFactory</a>
+            </section>
+
+            <section id="variantes">
+                <h2>Variantes</h2>
+                <p>
+                    Les variantes permettent d'ajouter des groupes d'options préfaits afin de personaliser l'affichage
+                    d'un carousel.
+                </p>
+
+                <h3>DÉFAUT</h3>
+
+                <p>
+                    Cette variante permet d'avoir une diapositive à la fois dans tous les résolutions d'écran. Elle ne
+                    requiert aucune configuration supplémentaire.
+                </p>
+                <a href="demo.html">Voir un démo de « defaut »</a>
+
+                <h3>SPLIT</h3>
+                <p>
+                    Cette variante permet d'avoir 2.5 diapositives du carousel visible en simultanné sur grand écran
+                    (1024px et plus), mais seulement une diapositive sur écran plus petit (1023px et moins).
+                </p>
+                <p>
+                    Pour activer cette variante, il faut ajouter l'attribut suivant sur l'élément qui est votre
+                    component :
+                </p>
+
+                <script type="text/plain" class="language-markup">
+                    # HTML
+                    data-variant="split"
+                </script>
+
+                <!-- HTML exemple complet -->
+                <details>
+                    <summary>exemple de code complet</summary>
+
+                    <script type="text/plain" class="language-markup">
+                        # HTML
+                        <!-- Slider main container -->
+                        <div class="swiper" data-component="Carousel" data-variant="split">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <div class="swiper-slide">Slide 1</div>
+                                <div class="swiper-slide">Slide 2</div>
+                            </div>
+                            <!-- If we need pagination -->
+                            <div class="swiper-pagination"></div>
+                    </script>
+                </details>
+
+                <a href="demo.html">Voir un démo de « split »</a>
+            </section>
+
+            <section class="swiper" data-component="Carousel" id="parametres">
+                <h2>Paramètres</h2>
+                <p>
+                    Les paramètres permettent d'ajuster des options précises afin de personaliser davantage le
+                    comportement du carousel.
+                </p>
+
+                <h3>AUTOPLAY</h3>
+                <p>Ce paramètre vous permet de faire défiler automatiquement le carousel.</p>
+                <script type="text/plain" class="language-markup">
+                    # HTML
+                    <div class="swiper" data-component="Carousel" data-autoplay>...</div>
+                </script>
+                <a href="demo.html">Voir un démo du « autoplay »</a>
+
+                <h3>LOOP</h3>
+                <p>Ce paramètre vous permet de faire défiler à l'infini le carousel.</p>
+                <script type="text/plain" class="language-markup">
+                    # HTML
+                    <div class="swiper" data-component="Carousel" data-loop>...</div>
+                </script>
+                <a href="demo.html">Voir un démo du « loop »</a>
+            </section>
+
+            <section id="autres">
+                <h2>Comment l'utiliser en dehors de TimTools</h2>
+                <p>
+                    À l'intérieur d'un fichier JavaScript, importez la classe `Carousel` que vous aurez préalablement
+                    intégré à votre projet.
+                </p>
+                <script type="text/plain" class="language-scss">
+                    import Carousel from './Carousel';
+                    new Carousel(element);
+                </script>
+                <p>
+                    Dans l'exemple ci-dessus, element est égal au HTMLElement qui l'attribut data-component="Carousel"
+                </p>
+            </section>
+        </div>
+    </div>
+</section>
+
+{% include '_partials/_footer.html' %}

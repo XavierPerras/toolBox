@@ -3,25 +3,25 @@
  */
 
 // Dependencies
-import webpack from 'webpack';
+import webpack from "webpack";
 
 // Config
-import { paths } from './config';
+import { paths } from "./config";
 
-const path = require('path');
+const path = require("path");
 
 // Plugins
-var WebpackNotifierPlugin = require('webpack-notifier');
-var SVGSpriteMapPlugin = require('svg-spritemap-webpack-plugin');
+var WebpackNotifierPlugin = require("webpack-notifier");
+var SVGSpriteMapPlugin = require("svg-spritemap-webpack-plugin");
 
 const webpackConfig = {
-  mode: process.env.NODE_ENV ? 'production' : 'development',
+  mode: process.env.NODE_ENV ? "production" : "development",
 
   entry: {
     main: paths.scripts.src,
   },
   output: {
-    filename: '[name].js',
+    filename: "[name].js",
   },
 
   module: {
@@ -30,20 +30,20 @@ const webpackConfig = {
 
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production'),
+      "process.env.NODE_ENV": JSON.stringify("production"),
     }),
     new SVGSpriteMapPlugin(paths.assets.icons, {
       output: {
         filename: `../assets/icons.svg`,
         svgo: {
           plugins: [
-            { removeTitle: true },
-            { removeAttrs: { attrs: '(stroke|fill)' } },
+            "removeTitle",
+            { name: "removeAttrs", params: { attrs: "(stroke|fill)" } },
           ],
         },
       },
       sprite: {
-        prefix: 'icon-',
+        prefix: "icon-",
       },
       styles: {
         keepAttributes: false,
@@ -55,12 +55,13 @@ const webpackConfig = {
   ],
 };
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === "production") {
   // console.log('Welcome to production');
-  webpackConfig.devtool = 'source-map';
+  
 }
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === "development") {
   // console.log('Welcome to development');
+  webpackConfig.devtool = "source-map";
 }
 
 module.exports = webpackConfig;

@@ -1,10 +1,7 @@
+/* ==========================================================================
+   scrolly / component
+   ========================================================================== */
 .has-js {
-    //relis le JS au css pour eviter l'opacité zero
-    //animation du scrolly
-    .cards {
-        perspective: 900px;
-    }
-
     [data-scrolly='fromBottom'] {
         opacity: 0; // si JS est desactiver l'opsacité reste a zero!!
         transition: all 0.4s ease-out;
@@ -27,11 +24,20 @@
     }
     [data-scrolly='fromReverse'] {
         opacity: 0;
-        transform: rotateX(-180deg);
-        transition: all 0.6s ease-out;
+        transform: rotateZ(-180deg);
+        transition: all s ease-out;
         &.is-active {
             opacity: 1;
             transform: rotateX(0);
+        }
+    }
+    [data-scrolly='fromlittle'] {
+        opacity: 0;
+        transform: scale(0);
+        transition: all 0.6s ease-out;
+        &.is-active {
+            opacity: 1;
+            transform: scale(1);
         }
     }
     [data-scrolly='fromRight'] {

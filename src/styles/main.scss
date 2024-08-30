@@ -1,15 +1,16 @@
 //FONTS
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
-// TOOLS
+// ici sont chargé les fonts
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Jomolhari&family=Montserrat:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Schibsted+Grotesk:ital,wght@0,400;0,700;1,700&display=swap');
 // mixins et fonctions utilisés globalement dans le SCSS (Sass)
 @import 'tools/cover';
 
 // SETTINGS
 // Contient les variables sur les polices, les définitions de couleurs, les définitions de  grandeurs,   etc.
 @import 'settings/colors';
-@import 'settings/easing';
 @import 'settings/fonts';
 @import 'settings/dimensions';
+@import 'settings/easing';
 
 // GENERIC
 // Permet de réinitialiser les CSS et de changer le modèle de boîte en box-sizing: border-box
@@ -26,19 +27,19 @@
 // COMPONENTS
 // Composants d'interface utilisateur spécifiques.
 // C’est là que la majorité de notre travail a lieu.
-@import '../../node_modules/swiper/swiper';
-@import '../../node_modules/swiper/modules/pagination/pagination.scss';
-@import '../../node_modules/swiper/modules/navigation/navigation.scss';
-//@import 'components/button';
-//@import 'components/icons';
-//@import 'components/footer';
+@import '../../node_modules/swiper/swiper.scss';
+@import '../../node_modules/swiper/modules/pagination/pagination';
+@import '../../node_modules/swiper/modules/navigation/navigation';
+@import '../../node_modules/swiper/modules/autoplay/autoplay';
+
+@import 'components/icons';
 @import 'components/header';
-
-//@import 'components/scrolly';
-//@import 'components/modal';
-//@import 'components/form';
-//@import 'components/snackBar';
-
+@import 'components/presentation.scss';
+@import 'components/footer.scss';
+@import 'components/description.scss';
+@import 'components/scrolly.scss';
+@import 'components/carousel';
 // UTILITIES
 // Utilitaires et classes auxiliaires avec possibilité de remplacer tout ce qui précède, par exemple masquer les éléments de la page
 @import 'utilities/accessibility';
+@import 'utilities/spacing';

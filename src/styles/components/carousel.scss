@@ -1,0 +1,23 @@
+/* ==========================================================================
+   carousel / component
+   ========================================================================== */
+
+.swiper-pagination-bullets {
+    display: flex;
+    justify-content: center;
+    position: static;
+}
+.swiper-pagination-bullet {
+    --size: 20px;
+
+    border: 2px solid var(--color-white);
+    border-radius: 100%;
+    height: var(--size);
+    margin: 0 5px;
+    transition: border 0.4s ease-out;
+    width: var(--size);
+}
+
+.swiper-pagination-bullet-active {
+    border-width: calc(var(--size, 20px) / 2);
+}

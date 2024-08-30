@@ -1,0 +1,20 @@
+.descritpionScrolly {
+    .exempleScrolly {
+        padding: 60px;
+        background-color: var(--color-bg-secondary);
+        display: inline-block;
+    }
+}
+.demo {
+    .carre {
+        text-align: center;
+        padding: 80px 0 0 0;
+        height: 100px;
+        background: var(--color-bg-secondary);
+    }
+    .upDown {
+        .swiper-vertical {
+            height: 400px;
+        }
+    }
+}

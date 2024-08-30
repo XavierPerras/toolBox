@@ -1,0 +1,96 @@
+{% include '_partials/_header.html' %}
+
+<section>
+    <div class="wrapper">
+        <h1>Comment présenter du code</h1>
+        <p>
+            Afin de t'aider à mettre des exemples de code intéressant un peu partout, regarde les exemples ci-dessous
+            pour les différents cas possibles (HMTL, SCSS, autre). Porte une attention particulière aux valeurs des
+            attributs
+            <strong>type</strong>
+            et
+            <strong>class</strong>
+            selon l'exemple. Les valeurs devront changer afin de mettre en surbrillance les particularité de chaque
+            langage.
+        </p>
+        <p>
+            Ce qui est important, c'est vraiment la balise &lt;script&gt; et son contenu. Le restant, à vous d'adapter
+            le tout à VOTRE structure HTML.
+        </p>
+    </div>
+</section>
+
+<section>
+    <div class="wrapper">
+        <h2>Code HTML</h2>
+        <hr />
+        <h3>1. Exemple de code simple (quelques lignes)</h3>
+        <script type="text/plain" class="language-markup">
+            # HTML
+            <div class="swiper" data-component="Carousel"></div>
+        </script>
+
+        <h3>2. Exemple de code complet/long (beaucoup de lignes)</h3>
+        <details>
+            <summary>exemple de code complet qui se minifi/agrandit</summary>
+
+            <script type="text/plain" class="language-markup">
+                # HTML
+                <div class="swiper" data-component="Carousel">
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">Slide 1</div>
+                        <div class="swiper-slide">Slide 2</div>
+                    </div>
+                    <!-- Si une pagination est requise -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </script>
+        </details>
+    </div>
+</section>
+
+<section>
+    <div class="wrapper">
+        <h2>Code SCSS</h2>
+        <hr />
+        <h3>1. Exemple de code simple (quelques lignes)</h3>
+        <script type="text/plain" class="language-scss">
+            # SCSS
+            @import '../../node_modules/swiper/swiper.scss';
+
+            // seulement si vous avez des modules supplémentaire comme la pagination
+            @import '../../node_modules/swiper/modules/pagination/pagination.scss';
+        </script>
+
+        <h3>2. Exemple de code complet/long (10+ lignes)</h3>
+        <details>
+            <summary>exemple de code complet qui se minifi/agrandit</summary>
+
+            <script type="text/plain" class="language-markup">
+                # HTML
+                <div class="swiper" data-component="Carousel">
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">Slide 1</div>
+                        <div class="swiper-slide">Slide 2</div>
+                    </div>
+                    <!-- Si une pagination est requise -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </script>
+        </details>
+    </div>
+</section>
+
+<section>
+    <div class="wrapper">
+        <h2>Exemple de code autre</h2>
+        <script type="text/plain" class="language-scss">
+            # TERMINAL
+            npm install swiper
+        </script>
+    </div>
+</section>
+
+{% include '_partials/_footer.html' %}

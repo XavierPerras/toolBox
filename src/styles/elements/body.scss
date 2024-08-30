@@ -3,11 +3,13 @@
    Le body permet d'initialiser les propriétés générales de la page.
    Les éléments de la page vont hérités des propriétés inscrite dans body
    ========================================================================== */
-
 body {
-    font-family: var(--font-primary);
-    font-size: var(--font-size-content);
+    background: var(--color-bg-primary);
     color: var(--color-primary);
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-content);
     line-height: 1.6;
-    background: var(--color-primary);
+    .auteur {
+        color: var(--color-secondary);
+    }
 }

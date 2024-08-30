@@ -1,0 +1,87 @@
+{% include '_partials/_header.html' %}
+
+<section class="descritpionScrolly" data-component="Scrolly">
+    <div class="wrapper">
+        <h1>Scrolly</h1>
+        <p>
+            La technique Scrolly est une façon innovante et dynamique de concevoir des sites Web modernes et engageants.
+            Cette technique implique l'utilisation d'un défilement de page ou d'un défilement parallaxe pour créer une
+            expérience de navigation immersive et interactive pour les visiteurs du site.
+        </p>
+
+        <h2>Comment l'utiliser :</h2>
+        <p>Sur la balise body du html. Appliquer le data component scrolly</p>
+        <script type="text/plain" class="language-markup">
+             # HTML
+            <body data-component="Scrolly">
+        </script>
+        <p>Sur les objets que vous voulez animer, ajouter le data-scrolly avec l'animation voulu.</p>
+        <script type="text/plain" class="language-markup">
+               # HTML
+            <a data-scrolly="fromBottom" href=""></a>
+        </script>
+        <h2>Variante/Options</h2>
+
+        <p>frombottom(arrive du bas)</p>
+        <script type="text/plain" class="language-markup">
+                # HTML
+            <a data-scrolly="fromBottom" href=""></a>
+        </script>
+        <p class="exempleScrolly" data-scrolly="fromBottom">exemple</p>
+
+        <p>fromLeft & fromRight (fait apparaître de la droite ou la gauche)</p>
+        <script type="text/plain" class="language-markup">
+                  # HTML
+            <a data-scrolly="fromLeft" href=""></a>
+            <a data-scrolly="fromRight" href=""></a>
+        </script>
+        <p class="exempleScrolly" data-scrolly="fromLeft">exemple</p>
+        <p class="exempleScrolly" data-scrolly="fromRight">exemple</p>
+        <p>flipFromBottom(fait flipper l’élément à l'horizontal)</p>
+        <script type="text/plain" class="language-markup">
+              # HTML
+            <a data-scrolly="flipFromBottom"> href=""></a>
+        </script>
+        <p class="exempleScrolly" data-scrolly="flipFromBottom">exemple</p>
+        <p>fromlittle(fait grossir l’élément)</p>
+        <script type="text/plain" class="language-markup">
+            # HTML
+            <a data-scrolly="fromlittle" href=""></a>
+        </script>
+        <p class="exempleScrolly" data-scrolly="fromlittle">exemple</p>
+        <p>no-repeat (les animations se faire une fois)</p>
+        <script type="text/plain" class="language-markup">
+            # HTML
+            <body data-component="Scrolly" data-norepeat >
+        </script>
+        <section data-component="Scrolly" data-norepeat>
+            <article>
+                <p class="exempleScrolly" data-scrolly="fromlittle">exemple</p>
+            </article>
+        </section>
+
+        <h2>Creation d'une nouvelle animation!</h2>
+        <p>étape 1: crée un data-scrolly sur l'objet souhaité</p>
+        <script type="text/plain" class="language-markup">
+             # HTML
+            <a data-scrolly='*inserer le nom *' href=""></a>
+        </script>
+        <p>
+            Étape 2: aller dans le fichier scss. Aller chercher le nouveau element data que vous avez crée. Modifier les
+            balises de transition et de transform!
+        </p>
+        <script type="text/plain" class="language-markup">
+            # SCSS
+            [[data-scrolly='*Le nom donné au  nouveau data-scrolly*'] {
+                opacity: 0;
+                transition: all 0.6s ease-out;
+                transform: translateX(-80px);
+                &.is-active {
+                    opacity: 1;
+                    transform: translateX(0);
+                }]
+        </script>
+
+        {% include '_partials/_footer.html' %}
+    </div>
+</section>

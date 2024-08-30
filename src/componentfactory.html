@@ -1,0 +1,41 @@
+{% include '_partials/_header.html' %}
+
+<section>
+    <div class="wrapper">
+        <h1>ComponentFactory</h1>
+        <p>
+            En JavaScript, une factory de composants est une approche de développement dans laquelle les composants ou
+            modules logiciels sont conçus pour être autonomes et réutilisables. Ces modules sont développés avec des
+            spécifications et des interfaces claires, leur permettant d'être intégrés ensemble pour former un système
+            logiciel plus large. L'approche de la factory de composants favorise une plus grande modularité, une plus
+            grande réutilisabilité et un développement parallèle en permettant à différentes équipes ou individus de
+            travailler sur des composants différents de manière indépendante sans être bloqués par des dépendances sur
+            d'autres composants.
+        </p>
+        <h2>Comment integrer une nouvelle composante</h2>
+        <p>Crée un fichier javascript et oubliez pas de l'exporter</p>
+        <script type="text/plain" class="language-markup">
+            # JS
+            export default class *Le nom de la composante* {}
+        </script>
+        <p>Dans le html nommer le data component data-component.</p>
+        <script type="text/plain" class="language-markup">
+             # HTML
+            <body data-component="*Le nom de la composante avec une Majuscule*">
+        </script>
+        <p>pour l'integer dans la components factory ajouter les deux lignes comme l'exemple.</p>
+        <script type="text/plain" class="language-markup">
+            # JS
+            import *nom de la composante* from 'le chemin relatif';
+            export default class ComponentFactory {
+            this.componentList = {
+                Carousel,
+                Scrolly,
+                Header,
+                *Écrire le nom de la composante aec une majuscule*,
+              };
+        </script>
+    </div>
+</section>
+
+{% include '_partials/_footer.html' %}

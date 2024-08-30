@@ -1,0 +1,77 @@
+{% include '_partials/_header.html' %}
+
+<section>
+    <div class="wrapper">
+        <h1>Header</h1>
+        <p>
+            La Composant Header est un composant JavaScript utilisé pour créer ou personnaliser l'en-tête d'un site web.
+            JavaScript permet de créer des en-têtes personnalisés qui sont réactifs, animés ou ont d'autres
+            fonctionnalités interactives.
+        </p>
+        <h3>Comment l'utiliser</h3>
+        <p>
+            Après importation du javascript, dans le html aller mettre le data-component. Créé le toggle pour le
+            responsive.
+        </p>
+        <script type="text/plain" class="language-markup">
+            # HTML
+            <div class="swiper" data-component="Carousel"></div>
+        </script>
+        <script type="text/plain" class="language-markup">
+            # HTML
+            <header class="header" data-component="Header">
+                <a href="index.html" class="header__brand">
+                    <img src="assets/images/" alt="TimTools" />
+                </a>
+                <nav class="nav-primary">
+                    <ul>
+                        <li>
+                           <a href=""></a>
+                        </li>
+                        <li>
+                            <a href=""></a>
+                        </li>
+                        <li class="nav-right"></li>
+                        <li >
+                            <a href=""></a>
+                        </li>
+                        <li>
+                            <a href=""></a>
+                        </li>
+
+                    </ul>
+                </nav>
+                <button class="header__toggle js-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </header>
+        </script>
+        <p data-scroll-limit="limit">
+            <a href="componentfactory.html">Pour voir comment ajouter la composante au JS</a>
+        </p>
+        <h3>Variation</h3>
+        <p>Ajouter data-limit = “limit” sur un élément pour que le header se cache une fois atteint.</p>
+        <p>Ajouter data-not-hiding="not-hiding" pour empêcher que le header se cache.</p>
+        <script type="text/plain" class="language-markup">
+                        # HTML
+            data-not-hiding="not-hiding" // Va sur la balise header.
+            data-limit=”limit” // Va sur l'élément defini comme limit.
+        </script>
+        <p><a href="headerExHiding.html">exemple avec data-not-hiding</a></p>
+        <p><a href="headerExLimit.html">exemple avec data-limit=”limit” </a></p>
+        <h3>Animation Du header</h3>
+        <p>
+            Dans le fichier css du header, section nav-primary>ul vous pouvez modifier l’animation lorsque la navigation
+            responsive est active.
+        </p>
+        <h3>Les classes d'états</h3>
+        <p>-header-is-hidden(va cacher le header)</p>
+        <p>-is-scrolling-down(indique au css de reagire en fonction que le scroll va vers le bas)</p>
+        <p>-is-scrolling-up (indique au css de reagire en fonction que le scroll va vers le bas)</p>
+        <p>-js-toggle(fais activer activer la nav en responsive)</p>
+    </div>
+</section>
+
+{% include '_partials/_footer.html' %}
