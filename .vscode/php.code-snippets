@@ -1,0 +1,28 @@
+{
+  "add boucle pour acf": {
+    "prefix": "php-while-acf",
+    "body": [
+      "<?php if ( have_rows('')):?>",
+      "<?php while (have_rows('') ) : the_row();?>",
+      "<?php endwhile; ?>",
+      "<?php endif; ?>"
+    ],
+    "description": "crée une boucle pour acf"
+  },
+
+  "base php": {
+    "prefix": "php-base",
+    "body": ["<?php ?>"],
+    "description": "crée balise php de base"
+  },
+  "add boucle pour post": {
+    "prefix": "php-while-posts",
+    "body": [
+      "<?php if ( have_posts('')):?>",
+      "<?php while (have_posts('') ) : the_post();?>",
+      "<?php endwhile; ?>",
+      "<?php endif; ?>"
+    ],
+    "description": "crée une boucle pour les post"
+  }
+}
