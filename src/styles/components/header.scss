@@ -8,7 +8,7 @@
     background-color: var(--color-bg-secondary);
     align-items: center;
     display: flex;
-    justify-content: space-between;
+
     padding: 0 2rem;
     height: var(--header-height);
     width: 100%;
@@ -19,11 +19,8 @@
     transition: all 0.4s $ease-out-expo;
     &::before {
         background-color: var(--color-bg-secondary);
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
+        display: flex;
+        justify-content: space-between;
         height: 100%;
         z-index: 2;
     }
@@ -39,24 +36,22 @@
 
 .header__brand {
     width: 200px;
-    position: relative;
+
     z-index: 10;
 
     @media screen and (min-width: $breakpoint-md) {
-        position: absolute;
-        margin: auto;
+        margin: 40px 0;
     }
 }
 .nav-primary {
     background-color: var(--color-bg-secondary);
-    position: absolute;
+
     top: 0;
     left: 0;
     width: 1000px;
     height: 100vh;
     padding-top: var(--header-height);
 
-    display: flex;
     overflow-y: auto;
     z-index: 1;
     transition: all 0.4s $ease-out-expo;
@@ -101,7 +96,7 @@
     }
     .nav-right {
         @media screen and (min-width: $breakpoint-md) {
-            margin-left: calc(var(--logo-width) + 40px);
+            //    margin-left: calc(var(--logo-width) + 40px);
         }
     }
 }
