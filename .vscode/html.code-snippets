@@ -7,5 +7,15 @@
       "</svg>"
     ],
     "description": "Ajouter une icône à partir du sprite svg"
+  },
+  //tool box seulment!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  "toolbox - Ajout un text en ligne de code": {
+    "prefix": "text-script",
+    "body": [
+      "<script type\"text/plain\" class=\"language-markup\">",
+      "  </script>  ",
+      "</svg>"
+    ],
+    "description": "Ajouter un text en style de code"
   }
 }
