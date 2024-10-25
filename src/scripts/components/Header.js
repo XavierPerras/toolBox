@@ -1,54 +1,59 @@
-// class pour la composant header: un header animer et reactif
+// Class for an animated and responsive header component
 export default class Header {
   constructor(element) {
-    this.element = element;
-    this.scrollPosition = 0;
+    this.element = element; // Reference to the header element
+    this.scrollPosition = 0; // Tracks the current scroll position
 
+    // Optional scroll limit for hiding header
     const lImit = document.querySelector('[data-scroll-limit]');
     console.log(lImit);
     if (lImit) {
       const rect = lImit.getBoundingClientRect();
-
-      this.scrollLimit =  rect.height / 100;
+      this.scrollLimit = rect.height / 100; // Sets scroll limit based on element height
       console.log(this.scrollLimit);
     } else {
-      this.scrollLimit = 0.1;
+      this.scrollLimit = 0.1; // Default scroll limit if no custom limit is set
       console.log('default');
     }
 
-    this.html = document.documentElement;
-    this.lastScrollPosition = 0;
+    this.html = document.documentElement; // Reference to the root HTML element
+    this.lastScrollPosition = 0; // Tracks previous scroll position
 
-    this.init();
-    this.initNavMobile();
+    this.init(); // Initialize header scroll event listener
+    this.initNavMobile(); // Initialize mobile navigation functionality
   }
+
+  // Sets up the header scroll listener
   init() {
-    console.log('header');
+    console.log('header initialized');
     window.addEventListener('scroll', this.onScroll.bind(this));
   }
-// cette methode detect le scroll
+
+  // Method to detect and respond to scroll events
   onScroll(event) {
     this.lastScrollPosition = this.scrollPosition;
     this.scrollPosition = document.scrollingElement.scrollTop;
-    this.setHeaderState();
-    this.setDirectionState();
+    this.setHeaderState(); // Hide or show header based on scroll position
+    this.setDirectionState(); // Set scroll direction (up or down)
   }
-  //cette methode permet de cacher le header
+
+  // Method to hide the header based on scroll position and set scroll limit
   setHeaderState() {
     const scrollHeight = document.scrollingElement.scrollHeight;
-    const noHiding = this.element.dataset.notHiding; //querySelector('[data-not-hiding]'); 
+    const noHiding = this.element.dataset.notHiding; // Checks if header should not be hidden
 
     if (noHiding == 'not-hiding') {
-      console.log(noRepeat);
+      console.log('Header hiding disabled');
     } else {
       if (this.scrollPosition > scrollHeight * this.scrollLimit) {
-        this.html.classList.add('header-is-hidden');
+        this.html.classList.add('header-is-hidden'); // Add class to hide header
       } else {
-        this.html.classList.remove('header-is-hidden');
+        this.html.classList.remove('header-is-hidden'); // Remove class to show header
       }
     }
   }
-  //cette methode detecte la direction du scroll
+
+  // Method to detect scroll direction (up or down)
   setDirectionState() {
     if (this.scrollPosition >= this.lastScrollPosition) {
       this.html.classList.add('is-scrolling-down');
@@ -58,14 +63,15 @@ export default class Header {
       this.html.classList.add('is-scrolling-up');
     }
   }
-  //cette methode detect si on est en menu destop ou mobile
-  initNavMobile() {
-    const toggle = this.element.querySelector('.js-toggle');
 
-    toggle.addEventListener('click', this.onToggleNav.bind(this));
+  // Method to set up mobile navigation functionality
+  initNavMobile() {
+    const toggle = this.element.querySelector('.js-toggle'); // Selects mobile nav toggle button
+    toggle.addEventListener('click', this.onToggleNav.bind(this)); // Add click listener for toggle
   }
-  //cette methode ouvre et ferme le menue en responsive
+
+  // Method to open and close the responsive mobile menu
   onToggleNav() {
-    this.html.classList.toggle('nav-is-active');
+    this.html.classList.toggle('nav-is-active'); // Toggles class to show/hide navigation
   }
 }
